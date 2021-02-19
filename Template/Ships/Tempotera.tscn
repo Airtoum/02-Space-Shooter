@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ships/Tempotera.gd" type="Script" id=1]
+[ext_resource path="res://Ships/Tempotera.png" type="Texture" id=2]
+
+[node name="Tempotera" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 2, 0 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( 2, 0 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+polygon = PoolVector2Array( 3.2, -6, 10.8, -11.3, 13, -10.2, 13, -5.6, 10, -4.6, 10, -2.5, 8.8, -0.1, 15.4, 5.4, 14.4, 8, -15, 8, -15, 3.8, -8.3, 0, -14.4, -11, -8.2, -11, -3.2, -6, -3, -6.5, -3, -11.6, 0.1, -12.3 )
+
+[node name="TimeMissileCooldown" type="Timer" parent="."]
+wait_time = 0.8
+
+[node name="PowerCore" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+[connection signal="timeout" from="TimeMissileCooldown" to="." method="_on_TimeMissileCooldown_timeout"]
+[connection signal="timeout" from="PowerCore" to="." method="_on_PowerCore_timeout"]
