@@ -1,0 +1,204 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://Menu/ShipButton.png" type="Texture" id=1]
+[ext_resource path="res://Menu/ShipButtonHover.png" type="Texture" id=2]
+[ext_resource path="res://Menu/ShipButtonSelected.png" type="Texture" id=3]
+[ext_resource path="res://Ships/Reklack Ship.png" type="Texture" id=4]
+[ext_resource path="res://Ships/Tempotera.png" type="Texture" id=5]
+[ext_resource path="res://Menu/ChooseShips.gd" type="Script" id=6]
+[ext_resource path="res://Menu/ShipButtonSelectedHover.png" type="Texture" id=7]
+[ext_resource path="res://Menu/ChooseShipsPlayer1.png" type="Texture" id=8]
+[ext_resource path="res://Menu/ChooseShipsCom.png" type="Texture" id=9]
+[ext_resource path="res://Fonts/airtoumcommodorishfont.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Menu/GoHover.png" type="Texture" id=11]
+[ext_resource path="res://Menu/Go.png" type="Texture" id=12]
+[ext_resource path="res://Menu/GoDown.png" type="Texture" id=13]
+[ext_resource path="res://Menu/Back.png" type="Texture" id=14]
+[ext_resource path="res://Menu/BackDown.png" type="Texture" id=15]
+[ext_resource path="res://Menu/BackHover.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=1]
+extra_spacing_char = -3
+extra_spacing_space = 10
+font_data = ExtResource( 10 )
+
+[node name="ChooseShips" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.18921
+margin_bottom = -1.18921
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="TextureRect" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 220.0
+margin_bottom = 60.0
+texture = ExtResource( 8 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="Control" parent="Player1"]
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1Reklack" type="TextureButton" parent="Player1/ButtonContainer"]
+margin_top = 50.0
+margin_right = 34.0
+margin_bottom = 90.0
+rect_scale = Vector2( 6, 6 )
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Player1/ButtonContainer/Player1Reklack"]
+position = Vector2( 0, -0.396402 )
+texture = ExtResource( 4 )
+offset = Vector2( 17, 18 )
+
+[node name="Player1Tempotera" type="TextureButton" parent="Player1/ButtonContainer"]
+margin_left = 240.0
+margin_top = 50.0
+margin_right = 274.0
+margin_bottom = 90.0
+rect_scale = Vector2( 6, 6 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Player1/ButtonContainer/Player1Tempotera"]
+position = Vector2( 0, -0.396402 )
+texture = ExtResource( 5 )
+offset = Vector2( 17, 23 )
+
+[node name="Player2" type="TextureRect" parent="."]
+margin_left = 20.0
+margin_top = 260.0
+margin_right = 220.0
+margin_bottom = 300.0
+texture = ExtResource( 9 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="Control" parent="Player2"]
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 60.0
+rect_scale = Vector2( 0.7, 0.7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2Reklack" type="TextureButton" parent="Player2/ButtonContainer"]
+margin_top = 50.0
+margin_right = 34.0
+margin_bottom = 90.0
+rect_scale = Vector2( 6, 6 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Player2/ButtonContainer/Player2Reklack"]
+position = Vector2( 0, -0.396402 )
+texture = ExtResource( 4 )
+offset = Vector2( 17, 18 )
+
+[node name="Player2Tempotera" type="TextureButton" parent="Player2/ButtonContainer"]
+margin_left = 240.0
+margin_top = 50.0
+margin_right = 274.0
+margin_bottom = 90.0
+rect_scale = Vector2( 6, 6 )
+disabled = true
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 2 )
+texture_disabled = ExtResource( 7 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Player2/ButtonContainer/Player2Tempotera"]
+position = Vector2( 0, -0.396402 )
+texture = ExtResource( 5 )
+offset = Vector2( 17, 23 )
+
+[node name="TextBox" type="Label" parent="."]
+margin_left = 600.0
+margin_top = 58.9405
+margin_right = 986.0
+margin_bottom = 561.941
+custom_fonts/font = SubResource( 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Go" type="TextureButton" parent="."]
+margin_left = 187.5
+margin_top = 510.0
+margin_right = 267.5
+margin_bottom = 580.0
+texture_normal = ExtResource( 12 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="."]
+margin_left = 82.5
+margin_top = 510.0
+margin_right = 162.5
+margin_bottom = 580.0
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Player1/ButtonContainer/Player1Reklack" to="." method="_on_Player1Reklack_pressed"]
+[connection signal="pressed" from="Player1/ButtonContainer/Player1Tempotera" to="." method="_on_Player1Tempotera_pressed"]
+[connection signal="pressed" from="Player2/ButtonContainer/Player2Reklack" to="." method="_on_Player2Reklack_pressed"]
+[connection signal="pressed" from="Player2/ButtonContainer/Player2Tempotera" to="." method="_on_Player2Tempotera_pressed"]
+[connection signal="pressed" from="Go" to="." method="_on_Go_pressed"]
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]

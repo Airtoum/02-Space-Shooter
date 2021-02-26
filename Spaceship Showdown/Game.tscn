@@ -1,0 +1,111 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Fonts/airtoumcommodorishfont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD/HUD.gd" type="Script" id=3]
+[ext_resource path="res://HUD/UIReklack.png" type="Texture" id=4]
+[ext_resource path="res://HUD/UITempotera.png" type="Texture" id=5]
+[ext_resource path="res://Game.gd" type="Script" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+extra_spacing_char = -6
+extra_spacing_space = 11
+font_data = ExtResource( 1 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Entities" type="Node2D" parent="."]
+
+[node name="HUD" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+rect_scale = Vector2( 1.5, 1.5 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="HUD"]
+margin_left = 824.0
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.533333, 0.533333, 0.533333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player1" type="TextureRect" parent="HUD"]
+margin_left = 824.0
+margin_right = 1024.0
+margin_bottom = 300.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Crew" type="ColorRect" parent="HUD/Player1"]
+margin_left = 20.0
+margin_top = 80.0
+margin_right = 53.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Batt" type="ColorRect" parent="HUD/Player1"]
+margin_left = 140.0
+margin_top = 80.0
+margin_right = 173.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player2" type="TextureRect" parent="HUD"]
+margin_left = 824.0
+margin_top = 300.0
+margin_right = 1024.0
+margin_bottom = 600.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crew" type="ColorRect" parent="HUD/Player2"]
+margin_left = 20.0
+margin_top = 80.0
+margin_right = 53.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Batt" type="ColorRect" parent="HUD/Player2"]
+margin_left = 140.0
+margin_top = 80.0
+margin_right = 173.0
+margin_bottom = 200.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Win" type="Label" parent="HUD"]
+margin_left = 160.0
+margin_top = 200.0
+margin_right = 688.0
+margin_bottom = 400.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 1.5, 1.5 )

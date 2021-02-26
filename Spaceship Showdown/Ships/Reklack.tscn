@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ships/Reklack Ship.png" type="Texture" id=1]
+[ext_resource path="res://Ships/Reklack.gd" type="Script" id=2]
+
+[node name="Reklack" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -5 )
+
+[node name="MagnetMineCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="PowerCore" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[node name="WildEngineCooldown" type="Timer" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+polygon = PoolVector2Array( 4.5, -8, 4.5, -5, 5.3, 1.5, 5.5, -7.5, 6.5, -7.5, 6.5, -11.5, 11.5, -11.5, 11.5, -6.3, 13.8, 5.5, 12.2, 5.5, 11.2, 9.5, 7.4, 9.5, 6.3, 8.5, -3.5, 10.9, -3.5, 9.1, -6.5, 8.1, -6.5, 9.5, -11.5, 9.5, -11.5, 5.4, -13.7, 2.1, -12.9, 0.5, -11.4, -11.5, -6.5, -11.5, -6.5, -1.5, -5.5, -1.5, -5.5, 0.5, -4.4, -6, -2.9, -13.5, -2.5, -14.3, -0.6, -16, 0.6, -16 )
+[connection signal="timeout" from="MagnetMineCooldown" to="." method="_on_MagnetMineCooldown_timeout"]
+[connection signal="timeout" from="PowerCore" to="." method="_on_PowerCore_timeout"]
+[connection signal="timeout" from="WildEngineCooldown" to="." method="_on_WildEngineCooldown_timeout"]

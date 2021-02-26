@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Ships/Tempotera.png" type="Texture" id=1]
+[ext_resource path="res://Entities/TempoteraEcho.gd" type="Script" id=2]
+
+[node name="TempoteraEcho" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+modulate = Color( 1, 1, 0.498039, 0.619608 )
+rotation = 1.5708
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )

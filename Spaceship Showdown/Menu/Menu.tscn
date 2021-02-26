@@ -1,0 +1,117 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Menu/SPACESHIP SHOWDOWN-1.png.png" type="Texture" id=1]
+[ext_resource path="res://Menu/1PlayerDown.png" type="Texture" id=2]
+[ext_resource path="res://Menu/1Player.png" type="Texture" id=3]
+[ext_resource path="res://Menu/1PlayerHover.png" type="Texture" id=4]
+[ext_resource path="res://Menu/Credits.png" type="Texture" id=5]
+[ext_resource path="res://Menu/CreditsDown.png" type="Texture" id=6]
+[ext_resource path="res://Menu/QuitDown.png" type="Texture" id=7]
+[ext_resource path="res://Menu/2PlayerDown.png" type="Texture" id=8]
+[ext_resource path="res://Menu/Quit.png" type="Texture" id=9]
+[ext_resource path="res://Menu/2Player.png" type="Texture" id=10]
+[ext_resource path="res://Menu/2PlayerHover.png" type="Texture" id=11]
+[ext_resource path="res://Menu/QuitHover.png" type="Texture" id=12]
+[ext_resource path="res://Menu/CreditsHover.png" type="Texture" id=13]
+[ext_resource path="res://Ships/Reklack Ship.png" type="Texture" id=14]
+[ext_resource path="res://Ships/Tempotera.png" type="Texture" id=15]
+[ext_resource path="res://Entities/Magnet Mine.png" type="Texture" id=16]
+[ext_resource path="res://Menu/Menu.gd" type="Script" id=17]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 16 )
+region = Rect2( 5, 5, 22, 22 )
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="TextureRect" parent="."]
+margin_left = 60.0
+margin_top = 50.0
+margin_right = 560.0
+margin_bottom = 200.0
+texture = ExtResource( 1 )
+stretch_mode = 6
+
+[node name="1Player" type="TextureButton" parent="."]
+margin_left = 700.0
+margin_top = 100.0
+margin_right = 900.0
+margin_bottom = 180.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 2 )
+texture_hover = ExtResource( 4 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="2Player" type="TextureButton" parent="."]
+margin_left = 700.0
+margin_top = 180.0
+margin_right = 900.0
+margin_bottom = 260.0
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Credits" type="TextureButton" parent="."]
+margin_left = 700.0
+margin_top = 260.0
+margin_right = 900.0
+margin_bottom = 340.0
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="TextureButton" parent="."]
+margin_left = 700.0
+margin_top = 340.0
+margin_right = 900.0
+margin_bottom = 420.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 7 )
+texture_hover = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reklack" type="Sprite" parent="."]
+position = Vector2( 140, 500 )
+rotation = 1.03847
+scale = Vector2( 4.5, 4.5 )
+texture = ExtResource( 14 )
+
+[node name="MagnetMine" type="Sprite" parent="."]
+position = Vector2( 290, 450 )
+rotation = -1.24617
+scale = Vector2( 3, 3.8 )
+texture = SubResource( 1 )
+
+[node name="Tempotera" type="Sprite" parent="."]
+position = Vector2( 500, 300 )
+rotation = -2.51502
+scale = Vector2( 3.5, 3.5 )
+texture = ExtResource( 15 )
+[connection signal="pressed" from="1Player" to="." method="_on_1Player_pressed"]
+[connection signal="pressed" from="2Player" to="." method="_on_2Player_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_Credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_Quit_pressed"]
