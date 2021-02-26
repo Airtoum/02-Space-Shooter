@@ -48,11 +48,14 @@ ART BY AIRTOUM
 PROGRAMMING BY AIRTOUM
 
 WRAPAROUND DISTANCE HELP BY 
-JOSKID ON BLOG.DEMOFOX.ORG
+ALAN WOLFE ON BLOG.DEMOFOX.ORG
 
 MADE WITH GODOT"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Back" type="TextureButton" parent="."]
 margin_left = 39.0575
